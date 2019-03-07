@@ -1063,7 +1063,6 @@ GameObject:
   - component: {fileID: 454566897}
   - component: {fileID: 454566900}
   - component: {fileID: 454566899}
-  - component: {fileID: 454566898}
   m_Layer: 8
   m_Name: Grass
   m_TagString: Untagged
@@ -1085,19 +1084,6 @@ Transform:
   m_Father: {fileID: 379098856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &454566898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454566896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d63eb5ba9fead438be20c30531cbd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 0}
 --- !u!61 &454566899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3415,7 +3401,6 @@ GameObject:
   - component: {fileID: 1426574666}
   - component: {fileID: 1426574665}
   - component: {fileID: 1426574664}
-  - component: {fileID: 1426574667}
   m_Layer: 8
   m_Name: Grass (1)
   m_TagString: Untagged
@@ -3511,19 +3496,6 @@ Transform:
   m_Father: {fileID: 379098856}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426574667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426574663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d63eb5ba9fead438be20c30531cbd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 0}
 --- !u!1 &1507905890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,9 +4066,9 @@ GameObject:
   - component: {fileID: 1772685130}
   - component: {fileID: 1772685129}
   - component: {fileID: 1772685132}
+  - component: {fileID: 1772685133}
   - component: {fileID: 1772685131}
   - component: {fileID: 1772685134}
-  - component: {fileID: 1772685133}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -4236,7 +4208,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 752513060}
   groundCheckRadius: 0.1
-  theGameManager: {fileID: 0}
+  theGameManager: {fileID: 2124914296}
 --- !u!95 &1772685134
 Animator:
   serializedVersion: 3
@@ -5169,6 +5141,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: thePlatforms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: theObjectPools.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: thePlatform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: generationPoint
+      value: 
+      objectReference: {fileID: 1957725613}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: distanceBetween
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: distanceBetweenMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: distanceBetweenMin
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: maxHeightChange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6722546696714059812, guid: 5f4a24c493da4414295a94e3249784c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5223,46 +5235,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: thePlatforms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: theObjectPools.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: thePlatform
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: generationPoint
-      value: 
-      objectReference: {fileID: 1957725613}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: distanceBetween
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: distanceBetweenMax
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: distanceBetweenMin
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
-        type: 3}
-      propertyPath: maxHeightChange
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f4a24c493da4414295a94e3249784c7, type: 3}
