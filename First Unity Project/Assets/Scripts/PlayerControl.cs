@@ -12,17 +12,21 @@ public class PlayerControl : MonoBehaviour
 
     public bool grounded;
     public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public float groundCheckRadius;
 
-    private Collider2D myCollider;
+    //private Collider2D myCollider;
 
     private Animator myAnimator;
+
+    public GameManager theGameManager;
 
     // Use this for initialization
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        myCollider = GetComponent<Collider2D>();
+        //myCollider = GetComponent<Collider2D>();
 
         myAnimator = GetComponent<Animator>();
 
@@ -32,7 +36,10 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
 
-        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); //check if a collider is touching another collider
+        //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); //check if a collider is touching another collider
+
+        //if the physics circle is overlapping with what's inside parameters then grounded is true
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
@@ -46,6 +53,14 @@ public class PlayerControl : MonoBehaviour
 
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
+    }
 
+    void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
+    {
+        //if player is touching another object tagged as killbox
+        if (other.gameObject.tag == "killbox") 
+        {
+            theGameManager.RestartGame();
+        }
     }
 }
