@@ -44,14 +44,6 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        //if (Input.GetKeyDown(KeyCode.) || Input.GetMouseButtonDown(0)) //use this for touch command
-        //{
-        //    if (grounded)
-        //    {
-        //        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
-        //    }
-        //}
-
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
 

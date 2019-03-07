@@ -2963,17 +2963,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a365b9611e95364795e1b94f8396539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlatform: {fileID: 6926521494292692447, guid: fede7165d81eb0045be19ec22224b2fe,
-    type: 3}
+  thePlatform: {fileID: 0}
   generationPoint: {fileID: 1957725613}
   distanceBetween: 0
-  distanceBetweenMin: 8
-  distanceBetweenMax: 12
+  distanceBetweenMin: 7
+  distanceBetweenMax: 8
   theObjectPools:
   - {fileID: 953937569}
   - {fileID: 1058950551}
   - {fileID: 1325024132}
   - {fileID: 1899428611}
+  maxHeightPoint: {fileID: 1410228409}
+  maxHeightChange: 3
 --- !u!4 &1311279722
 Transform:
   m_ObjectHideFlags: 0
@@ -2985,7 +2986,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.95, y: -2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1410228409}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3284,6 +3286,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1410228408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410228409}
+  m_Layer: 0
+  m_Name: maxHeightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410228409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410228408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311279722}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426574663
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,7 +4121,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5083,12 +5115,17 @@ PrefabInstance:
     - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
         type: 3}
       propertyPath: distanceBetweenMax
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
         type: 3}
       propertyPath: distanceBetweenMin
-      value: 8
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722546696714059815, guid: 5f4a24c493da4414295a94e3249784c7,
+        type: 3}
+      propertyPath: maxHeightChange
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f4a24c493da4414295a94e3249784c7, type: 3}
