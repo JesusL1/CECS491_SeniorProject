@@ -10,9 +10,25 @@ public class PlatformGenerator : MonoBehaviour {
 
     private float platformWidth;
 
+    // distance between platforms
+    public  float distanceBetweenMin;
+    public float distanceBetweenMax;
+
+    //public GameObject[] thePlatforms;
+    private int platformSelector;
+    private float[] platformWidths;
+
+    public ObjectPooler[] theObjectPools;
+
 	// Use this for initialization
 	void Start () {
-        platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+        //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+        platformWidths = new float[theObjectPools.Length];
+
+        for (int i = 0; i < theObjectPools.Length; i++)
+        {
+            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
+        }
 	}
 	
 	// Update is called once per frame
@@ -21,9 +37,21 @@ public class PlatformGenerator : MonoBehaviour {
         // if the x position of where the object is right now is more to the left of generation point
         if (transform.position.x < generationPoint.position.x)
         {
-            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
+            distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
 
-            Instantiate(thePlatform, transform.position, transform.rotation);
+            platformSelector = Random.Range(0, theObjectPools.Length); //Select a random platform
+
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, transform.position.y, transform.position.z);
+
+
+            //Instantiate(theObjectPools[platformSelector], transform.position, transform.rotation);
+            GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
+
+            newPlatform.transform.position = transform.position;
+            newPlatform.transform.rotation = transform.rotation;
+            newPlatform.SetActive(true);
+
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
         }
 
 	}
