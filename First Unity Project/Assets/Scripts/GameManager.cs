@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     private PlatformDestroyer[] platformList;
 
+    public DeathMenu theDeathScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +29,17 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        thePlayer.gameObject.SetActive(false);
+
+        theDeathScreen.gameObject.SetActive(true);
         /*Couroutine runs independently from script and is useful to 
         add time delays so that the player doesn't go back to the beginning point right away */
-        StartCoroutine("RestartGameCo");
+       // StartCoroutine("RestartGameCo");
     }
 
-    public IEnumerator RestartGameCo()
+    public void Reset()
     {
-        thePlayer.gameObject.SetActive(false); //playerObject becomes inactive and no longer visible
-        yield return new WaitForSeconds(0.5f); // half a second delay upon death 
+        theDeathScreen.gameObject.SetActive(false);
         platformList = FindObjectsOfType<PlatformDestroyer>();
         for (int i = 0; i < platformList.Length; i++)
         {
@@ -46,4 +50,19 @@ public class GameManager : MonoBehaviour
         platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true); //player is set back to start
     }
+
+    //public IEnumerator RestartGameCo()
+    //{
+    //    thePlayer.gameObject.SetActive(false); //playerObject becomes inactive and no longer visible
+    //    yield return new WaitForSeconds(0.5f); // half a second delay upon death 
+    //    platformList = FindObjectsOfType<PlatformDestroyer>();
+    //    for (int i = 0; i < platformList.Length; i++)
+    //    {
+    //        platformList[i].gameObject.SetActive(false);
+    //    }
+
+    //    thePlayer.transform.position = playerStartPoint;
+    //    platformGenerator.position = platformStartPoint;
+    //    thePlayer.gameObject.SetActive(true); //player is set back to start
+    //}
 }
