@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
 
-    public PlayerControl thePlayer;
+    public PlayerController thePlayer;
     private Vector3 playerStartPoint;
 
     private PlatformDestroyer[] platformList;
