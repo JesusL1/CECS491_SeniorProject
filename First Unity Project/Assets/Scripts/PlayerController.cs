@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "killbox") 
         {
             myAnimator.SetBool("IsDead", true);
+            Destroy(gameObject, 5f);
             theGameManager.RestartGame();
         }
 
