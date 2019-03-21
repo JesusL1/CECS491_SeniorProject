@@ -80,13 +80,24 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Recognized command:");
             Debug.Log(vcommand);
             if (grounded && vcommand == 3)
+            {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
-
+                Debug.Log("UP");
+            }
+               
             if (grounded && vcommand == 2)
+            {
                 moveSpeed = moveSpeed + 2;
+                Debug.Log("Go");
+            }
+                
 
-            if (grounded && vcommand == 1)
+            if (grounded && vcommand == 1 && moveSpeed > 0)
+            {
                 moveSpeed = moveSpeed - 2;
+                Debug.Log("Down");
+            }
+                
         }
 
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
