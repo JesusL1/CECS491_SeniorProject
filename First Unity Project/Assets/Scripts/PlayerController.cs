@@ -62,5 +62,10 @@ public class PlayerController : MonoBehaviour
         {
             theGameManager.RestartGame();
         }
+
+        if (other.gameObject.tag == "endlevel")
+        {
+            theGameManager.EndGame();
+        }
     }
 }

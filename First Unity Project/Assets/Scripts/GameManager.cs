@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private PlatformDestroyer[] platformList;
 
     public DeathMenu theDeathScreen;
+    public EndLevelMenu endlevel;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class GameManager : MonoBehaviour
         /*Couroutine runs independently from script and is useful to 
         add time delays so that the player doesn't go back to the beginning point right away */
        // StartCoroutine("RestartGameCo");
+    }
+
+    public void EndGame()
+    {
+        thePlayer.gameObject.SetActive(false);
+        endlevel.gameObject.SetActive(true);
     }
 
     public void Reset()
