@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         //if player is touching another object tagged as killbox
         if (other.gameObject.tag == "killbox") 
         {
+            myAnimator.SetBool("IsDead", true);
             theGameManager.RestartGame();
         }
 
