@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        platformStartPoint = platformGenerator.position;
+        //platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
     }
 
@@ -40,14 +40,14 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         theDeathScreen.gameObject.SetActive(false);
-        platformList = FindObjectsOfType<PlatformDestroyer>();
-        for (int i = 0; i < platformList.Length; i++)
-        {
-            platformList[i].gameObject.SetActive(false);
-        }
+        //platformList = FindObjectsOfType<PlatformDestroyer>();
+        //for (int i = 0; i < platformList.Length; i++)
+        //{
+        //    platformList[i].gameObject.SetActive(false);
+        //}
 
         thePlayer.transform.position = playerStartPoint;
-        platformGenerator.position = platformStartPoint;
+        //platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true); //player is set back to start
     }
 
