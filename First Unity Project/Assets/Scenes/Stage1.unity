@@ -22764,11 +22764,26 @@ PrefabInstance:
       propertyPath: theGameManager
       value: 
       objectReference: {fileID: 1259181136}
+    - target: {fileID: 4849209372385480946, guid: 701dc5b874bc86d43aac4cfed82e01e7,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849209372385480946, guid: 701dc5b874bc86d43aac4cfed82e01e7,
+        type: 3}
+      propertyPath: JumpForce
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 4849209372385480945, guid: 701dc5b874bc86d43aac4cfed82e01e7,
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4849209372385480947, guid: 701dc5b874bc86d43aac4cfed82e01e7,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: dc01b25c03f68f2418d7a30d8e076e87, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701dc5b874bc86d43aac4cfed82e01e7, type: 3}
 --- !u!1 &970054456
