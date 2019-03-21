@@ -83,10 +83,10 @@ public class PlayerController : MonoBehaviour
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
 
             if (grounded && vcommand == 2)
-                moveSpeed = 5;
+                moveSpeed = moveSpeed + 2;
 
             if (grounded && vcommand == 1)
-                moveSpeed = 0;
+                moveSpeed = moveSpeed - 2;
         }
 
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
@@ -98,8 +98,8 @@ public class PlayerController : MonoBehaviour
         //if player is touching another object tagged as killbox
         if (other.gameObject.tag == "killbox") 
         {
-            myAnimator.SetBool("IsDead", true);
-            Destroy(gameObject, 5f);
+            //myAnimator.SetBool("IsDead", true);
+            //Destroy(gameObject, 5f);
             theGameManager.RestartGame();
         }
 
