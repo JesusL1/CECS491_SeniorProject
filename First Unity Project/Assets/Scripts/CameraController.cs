@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
     public float smoothTimeY;
     public float smoothTimeX;
 
-    public PlayerControl player;
+    public PlayerController player;
 
     //public PlayerControl thePlayer;
     //private Vector3 lastPlayerPosition;
