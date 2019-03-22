@@ -13,11 +13,12 @@ public class GameManager : MonoBehaviour
     private PlatformDestroyer[] platformList;
 
     public DeathMenu theDeathScreen;
+    public EndLevelMenu endlevel;
 
     // Start is called before the first frame update
     void Start()
     {
-        platformStartPoint = platformGenerator.position;
+        //platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
     }
 
@@ -37,17 +38,23 @@ public class GameManager : MonoBehaviour
        // StartCoroutine("RestartGameCo");
     }
 
+    public void EndGame()
+    {
+        thePlayer.gameObject.SetActive(false);
+        endlevel.gameObject.SetActive(true);
+    }
+
     public void Reset()
     {
         theDeathScreen.gameObject.SetActive(false);
-        platformList = FindObjectsOfType<PlatformDestroyer>();
-        for (int i = 0; i < platformList.Length; i++)
-        {
-            platformList[i].gameObject.SetActive(false);
-        }
+        //platformList = FindObjectsOfType<PlatformDestroyer>();
+        //for (int i = 0; i < platformList.Length; i++)
+        //{
+        //    platformList[i].gameObject.SetActive(false);
+        //}
 
         thePlayer.transform.position = playerStartPoint;
-        platformGenerator.position = platformStartPoint;
+        //platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true); //player is set back to start
     }
 

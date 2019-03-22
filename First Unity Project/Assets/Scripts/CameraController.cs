@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<PlayerControl>();
+        player = FindObjectOfType<PlayerController>();
         //thePlayer = FindObjectOfType<PlayerControl>();
         //lastPlayerPosition = thePlayer.transform.position;
 	}

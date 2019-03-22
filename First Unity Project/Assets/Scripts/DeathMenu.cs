@@ -11,8 +11,8 @@ public class DeathMenu : MonoBehaviour
         FindObjectOfType<GameManager>().Reset();
     }
 
-    //public void QuitToMain()
-    //{
-    //    Application.LoadLevel(mainMenuLevel);
-    //}
+    public void QuitToMain()
+    {
+        Application.LoadLevel(mainMenuLevel);
+    }
 }
