@@ -204,9 +204,8 @@ namespace VoiceRecognizer
 
             //generate the features
             double max_value = sample_avg.Max();
-            if (max_value > 0 && counter > 30) //If it is a valid wave and enough analysis
+            if (max_value > 0 && counter == 18) //If it is a valid wave and enough analysis
             {
-                counter = 0;
                 spectrum_avg = normalization(spectrum_avg, max_value);
                 double[] features = new double[sample_avg.Length + spectrum_avg.Length + 1];
 
@@ -219,6 +218,13 @@ namespace VoiceRecognizer
                     features[sample_avg.Length + i + 1] = spectrum_avg[i];
 
                 return (identifyClass(features));
+            }
+
+            //Clean the remainder wave
+            if (counter > 30)
+            {
+                counter = 0;
+                return (-1);
             }
 
             return (0);
@@ -245,7 +251,7 @@ namespace VoiceRecognizer
             audioSource.clip.GetData(sample, 0);
 
             int command = getCommand(sample);
-            if (command > 0)
+            if (command != 0)
                 audioSource.clip.SetData(blank, 0);
 
             return (command);
