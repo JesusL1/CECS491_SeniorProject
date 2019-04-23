@@ -88,22 +88,53 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Up");
             }
 
-            if (grounded && command == 2)
+            if (grounded)
             {
                 moveSpeed = moveSpeed + 2;
                 Debug.Log("Go");
             }
 
-            if (grounded && command == 1 && moveSpeed > 0)
+            if (grounded && moveSpeed > 0)
             {
                 moveSpeed = moveSpeed - 2;
                 Debug.Log("Down");
             }
+
+
+            //if (grounded && command == 2)
+            //{
+            //    moveSpeed = moveSpeed + 2;
+            //    Debug.Log("Go");
+            //}
+
+            //if (grounded && command == 1 && moveSpeed > 0)
+            //{
+            //    moveSpeed = moveSpeed - 2;
+            //    Debug.Log("Down");
+            //}
         }
 
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
     }
+
+    public void ToggleSpeedUp()
+    {
+        if(grounded)
+        {
+            moveSpeed = moveSpeed + 2;
+            Debug.Log("moveSpeedUp");
+        }
+    }
+
+    //public void ToggleSpeedDown()
+    //{
+    //    if (grounded && moveSpeed > 0)
+    //    {
+    //        moveSpeed = moveSpeed - 2;
+    //        Debug.Log("moveSpeedDown");
+    //    }
+    //}
 
 
     void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
