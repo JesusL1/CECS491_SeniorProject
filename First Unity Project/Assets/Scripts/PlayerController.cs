@@ -127,14 +127,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //public void ToggleSpeedDown()
-    //{
-    //    if (grounded && moveSpeed > 0)
-    //    {
-    //        moveSpeed = moveSpeed - 2;
-    //        Debug.Log("moveSpeedDown");
-    //    }
-    //}
+    public void ToggleSpeedDown()
+    {
+        if (grounded && moveSpeed > 0)
+        {
+            moveSpeed = moveSpeed - 2;
+            Debug.Log("moveSpeedDown");
+        }
+    }
 
 
     void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
