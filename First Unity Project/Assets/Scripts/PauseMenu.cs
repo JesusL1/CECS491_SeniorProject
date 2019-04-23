@@ -1,24 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public string mainMenuLevel;
+
+    public void RestartGame()
+    {
+        Resume();
+        FindObjectOfType<GameManager>().Reset();
+    }
+
+    public void QuitToMain()
+    {
+        Application.LoadLevel(mainMenuLevel);
+    }
+
+
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+        {
+            TogglePause();
+        }
+    }
+
+    public void TogglePause()
+    {
+        if (GameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
     }
 
     void Resume()
