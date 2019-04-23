@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
         //if player is touching another object tagged as killbox
         if (other.gameObject.tag == "killbox")
         {
+            moveSpeed = 0;
             theGameManager.RestartGame();
         }
     }
