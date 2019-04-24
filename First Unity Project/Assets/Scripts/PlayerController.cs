@@ -88,13 +88,13 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Up");
             }
 
-            if (grounded)
+            if (grounded && command == 2)
             {
                 moveSpeed = moveSpeed + 2;
                 Debug.Log("Go");
             }
 
-            if (grounded && moveSpeed > 0)
+            if (grounded && moveSpeed > 0 && command == 1)
             {
                 moveSpeed = moveSpeed - 2;
                 Debug.Log("Down");
