@@ -108,10 +108,26 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
     {
+        
         //if player is touching another object tagged as killbox
         if (other.gameObject.tag == "killbox")
         {
             theGameManager.RestartGame();
         }
+
+        //if player is touching the Moving Platform it will stick with the platform.
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = other.transform;
+        }
     }
+    void OnCollisionExit2D(Collision2D other) //exit collision for the moving platform
+    {
+               
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = null;// the start point would not follow the character
+        }
+    }
+
 }
