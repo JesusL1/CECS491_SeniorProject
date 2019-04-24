@@ -9,8 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        Resume();
+
         FindObjectOfType<GameManager>().Reset();
+        Resume();
     }
 
     public void QuitToMain()

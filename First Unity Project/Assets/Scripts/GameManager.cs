@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        thePlayer.moveSpeed = 0;
         theDeathScreen.gameObject.SetActive(false);
         //platformList = FindObjectsOfType<PlatformDestroyer>();
         //for (int i = 0; i < platformList.Length; i++)
