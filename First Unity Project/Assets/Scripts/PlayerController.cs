@@ -124,8 +124,6 @@ public class PlayerController : MonoBehaviour
             moveSpeed = moveSpeed - 2;
         }
     }
-
-
     void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
     {
 
@@ -136,10 +134,24 @@ public class PlayerController : MonoBehaviour
             theGameManager.RestartGame();
         }
 
-        //if player is touching another object tagged as killbox
         else if (other.gameObject.tag == "endlevel")
         {
             theGameManager.EndGame();
+        }
+
+        //if player is touching the Moving Platform it will stick with the platform.
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+    void OnCollisionExit2D(Collision2D other) //exit collision for the moving platform
+    {
+               
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = null;// the start point would not follow the character
+
         }
     }
 
