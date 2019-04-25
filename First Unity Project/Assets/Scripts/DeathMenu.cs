@@ -8,6 +8,7 @@ public class DeathMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        Application.LoadLevel(Application.loadedLevel);
         FindObjectOfType<GameManager>().Reset();
     }
 

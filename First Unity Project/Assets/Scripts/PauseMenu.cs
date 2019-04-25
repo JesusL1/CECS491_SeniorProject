@@ -9,16 +9,17 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        Resume();
-        FindObjectOfType<GameManager>().Reset();
         
+        Application.LoadLevel(Application.loadedLevel);
+        Resume();
+        //FindObjectOfType<GameManager>().Reset();
     }
 
     public void QuitToMain()
     {
         Resume();
-        FindObjectOfType<GameManager>().Reset();
         Application.LoadLevel(mainMenuLevel);
+       //FindObjectOfType<GameManager>().Reset();
     }
 
 

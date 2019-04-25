@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //platformStartPoint = platformGenerator.position;
-        playerStartPoint = thePlayer.transform.position;
+        //playerStartPoint = thePlayer.transform.position;
     }
 
     // Update is called once per frame
@@ -30,12 +30,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        
         thePlayer.gameObject.SetActive(false);
 
         theDeathScreen.gameObject.SetActive(true);
+    
         /*Couroutine runs independently from script and is useful to 
         add time delays so that the player doesn't go back to the beginning point right away */
-       // StartCoroutine("RestartGameCo");
+        // StartCoroutine("RestartGameCo");
     }
 
     public void EndGame()
