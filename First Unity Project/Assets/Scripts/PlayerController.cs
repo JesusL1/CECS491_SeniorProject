@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             //Settings for the microphone for endless capture
             audioSource.clip = Microphone.Start(null, true, 1, 16000);
 
-            //Load the trained weights 
+            //Load the trained weights
             VoiceCommand.loadWeights();
         }
         else
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
             //******************************************************************************
             Debug.Log("Recognized command:");
             Debug.Log(command);
-            
+
             if (grounded && command == 3)
             {
                 //Vector2 force = Vector2.right * JumpForce;
@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) //two collision objects touch each other
     {
+
         //if player is touching another object tagged as killbox
         if (other.gameObject.tag == "killbox")
         {
@@ -141,4 +142,5 @@ public class PlayerController : MonoBehaviour
             theGameManager.EndGame();
         }
     }
+
 }
