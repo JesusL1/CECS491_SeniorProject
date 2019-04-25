@@ -59,14 +59,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); //check if a collider is touching another collider
-        //if the physics circle is overlapping with what's inside parameters then grounded is true
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+    //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround); //check if a collider is touching another collider
+    //if the physics circle is overlapping with what's inside parameters then grounded is true
+    grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) //use this for touch command
+        if (Input.GetKeyDown(KeyCode.Space)) //use this for touch command
         {
-            //something to do with the keyboard
+
         }
 
 
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
         // Recognizing the command
         //******************************************************************************
         int command = VoiceCommand.getCommand(audioSource);
+
         if (command > 0)
         {
             //******************************************************************************
@@ -81,9 +83,11 @@ public class PlayerController : MonoBehaviour
             //******************************************************************************
             Debug.Log("Recognized command:");
             Debug.Log(command);
-
+            
             if (grounded && command == 3)
             {
+                //Vector2 force = Vector2.right * JumpForce;
+                //myRigidbody.AddForce(force, ForceMode2D.Impulse);
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
                 Debug.Log("Up");
             }
@@ -94,24 +98,11 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Go");
             }
 
-            if (grounded && moveSpeed > 0 && command == 1)
+            if (grounded && command == 1 && moveSpeed > 0)
             {
                 moveSpeed = moveSpeed - 2;
                 Debug.Log("Down");
             }
-
-
-            //if (grounded && command == 2)
-            //{
-            //    moveSpeed = moveSpeed + 2;
-            //    Debug.Log("Go");
-            //}
-
-            //if (grounded && command == 1 && moveSpeed > 0)
-            //{
-            //    moveSpeed = moveSpeed - 2;
-            //    Debug.Log("Down");
-            //}
         }
 
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
@@ -123,7 +114,6 @@ public class PlayerController : MonoBehaviour
         if(grounded)
         {
             moveSpeed = moveSpeed + 2;
-            Debug.Log("moveSpeedUp");
         }
     }
 
@@ -132,7 +122,6 @@ public class PlayerController : MonoBehaviour
         if (grounded && moveSpeed > 0)
         {
             moveSpeed = moveSpeed - 2;
-            Debug.Log("moveSpeedDown");
         }
     }
 
