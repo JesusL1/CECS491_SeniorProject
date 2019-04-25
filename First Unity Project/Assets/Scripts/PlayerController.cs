@@ -65,9 +65,9 @@ public class PlayerController : MonoBehaviour
     grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space)) //use this for touch command
+        if (grounded && Input.GetKeyDown(KeyCode.Space)) //use this for touch command
         {
-
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
         }
 
 
