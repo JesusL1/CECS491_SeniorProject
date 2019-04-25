@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Alan_UI/MainMenu.unity
     guid: cb3d4fbf36d03914c840aeeab89b0903
-  - enabled: 0
-    path: Assets/Scenes/Stage1.unity
-    guid: c7de88e588c42f84698ab684b6d3b5a8
   - enabled: 1
-    path: Assets/Luke_Scenes/stage2.unity
+    path: Assets/Luke_Scenes/Stage1.unity
     guid: 50c9d8bda056d8a4493840e0cbd7afd0
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: c7de88e588c42f84698ab684b6d3b5a8
   m_configObjects: {}
