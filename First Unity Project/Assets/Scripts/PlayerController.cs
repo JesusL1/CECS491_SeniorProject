@@ -134,5 +134,11 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 0;
             theGameManager.RestartGame();
         }
+
+        //if player is touching another object tagged as killbox
+        else if (other.gameObject.tag == "endlevel")
+        {
+            theGameManager.EndGame();
+        }
     }
 }
