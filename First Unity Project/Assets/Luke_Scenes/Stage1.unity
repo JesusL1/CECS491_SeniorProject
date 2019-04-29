@@ -1161,9 +1161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Speed
-
-    Up'
+  m_Text: Increase Speed
 --- !u!222 &312894415
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2615,7 +2613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Speed Down
+  m_Text: Decrease Speed
 --- !u!222 &698037985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2739,8 +2737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 46.20001}
-  m_SizeDelta: {x: 59.70001, y: 36.200012}
+  m_AnchoredPosition: {x: 0, y: 61.9}
+  m_SizeDelta: {x: 115.3, y: 61.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &711369154
 MonoBehaviour:
@@ -2943,7 +2941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800847799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.103425, y: -8.08, z: -10}
+  m_LocalPosition: {x: -7.109251, y: -8.08, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 992947634}
@@ -3410,7 +3408,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 49.7, y: 36.2}
+  m_SizeDelta: {x: 90.08, y: 49.35}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &891672256
 MonoBehaviour:
@@ -14273,7 +14271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856315999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.103425, y: -8.08, z: -10}
+  m_LocalPosition: {x: -7.109251, y: -8.08, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1072489314}
@@ -14573,8 +14571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -59.70001, y: 46.20001}
-  m_SizeDelta: {x: 59.70001, y: 36.200012}
+  m_AnchoredPosition: {x: -115.3, y: 61.9}
+  m_SizeDelta: {x: 115.3, y: 61.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1901356309
 MonoBehaviour:
