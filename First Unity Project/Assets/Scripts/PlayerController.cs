@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, JumpForce);
         }
 
+       
+
 
         //******************************************************************************
         // Recognizing the command
